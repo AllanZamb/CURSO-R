@@ -44,7 +44,7 @@ if ( 5 < 7 | 4 < 3  ){
   #De lo contrario ELSE demuestra que no es mayor
 
 for (iterador in 1:5){
-  #print(paste('Hola', iterador))
+  print(paste('Hola', iterador))
   
   if ( iterador >= 4 ){
     print('Si, es mayor o igual')
