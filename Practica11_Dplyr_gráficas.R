@@ -6,6 +6,7 @@ library(dplyr)
 library(ggplot2)
 library(gganimate)
 library (gifski)
+
 paises<- read.csv("https://covid19.who.int/WHO-COVID-19-global-data.csv")
 
 colnames(paises) <- c("Date_reported" , 

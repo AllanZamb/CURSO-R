@@ -4,6 +4,7 @@ library(ggplot2)
 library(dplyr)
 library(gganimate)
 library (gifski)
+
 ################################################################################
 #Cargamos el Dataset de OMS
 paises<- read.csv("https://covid19.who.int/WHO-COVID-19-global-data.csv")
@@ -58,7 +59,7 @@ paises_filtrado2 <- paises %>%
 
 #Importante realizar la conversión a Date antes de mandar a ggplot
 paises_filtrado$Fecha_Reporte <- as.Date(paises_filtrado$Fecha_Reporte, format = "%Y-%m-%d")
-
+class(paises_filtrado$Fecha_Reporte)
 ################################################################################
 #Gráfica básica (boxplot)
 ggplot(paises_filtrado,
@@ -73,9 +74,7 @@ ggplot(paises_filtrado,
        aes(x = Fecha_Reporte,
            y = Casos_Nuevos,
            col = Region)) + 
-  geom_line() +
-  scale_color_manual(values = color)
- 
+  geom_line() 
 
 ################################################################################
 #Gráfica básica (lineas y puntos)
